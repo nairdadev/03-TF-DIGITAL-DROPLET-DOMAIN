@@ -10,6 +10,7 @@ provider "digitalocean" {
 }
 
 
+
 #Traemos nuestra SHH-KEY
 resource "digitalocean_ssh_key" "web" {
   name       = "sshkeys"
@@ -33,3 +34,15 @@ resource "digitalocean_droplet" "web" {
 }
 
  
+#DOMIO
+resource "digitalocean_domain" "domain" {
+  name = "domain.com"
+}
+
+resource "digitialocean_record" "main" {
+  domain = digitalocean_domain.name
+  type = "A"
+  name = "@"
+  value = digitalocean_droplet.web.ipv4_address  
+  
+}

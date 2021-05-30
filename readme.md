@@ -38,7 +38,8 @@ ____
 
 Copiar la clave publica de nuestra pc..que se encuentra en: ~/.ssh/id_rsa.pub y copiarlo a la carpeta files
 
-  
+En el archivo main.tf cambiar domain.com por el dominio a utilizar.
+
 
 el archivo user-data.sh indica lo que vamos a instalar en este caso lo necesario para NODEJS hay un proyecto de ejemplo en el mismo.
 
